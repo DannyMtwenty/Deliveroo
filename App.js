@@ -1,13 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { TailwindProvider } from "tailwindcss-react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./screens/HomeScreen";
 
-import tw from "twrnc";
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={tw`p-4 android:pt-2 bg-red-300 flex-row m-5`}>
-      <Text style={tw`text-md tracking-wide text-white`}>Hey there!</Text>
-
-    </View>
+    <NavigationContainer>
+      <TailwindProvider>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+      </TailwindProvider>
+    </NavigationContainer>
   );
 }
