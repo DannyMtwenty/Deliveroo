@@ -10,8 +10,10 @@ const Categories = () => {
         paddintTop: 10,
         paddingHorizontal : 15,
         marginHorizontal: 10,
+        marginTop : 15,
     }}
   showsHorizontalScrollIndicator={false}
+  
     horizontal>
       <CategoryCard imgUrl="https://links.papareact.com/gn7" title="img1" />
       <CategoryCard imgUrl="https://links.papareact.com/gn7" title="img1" />
