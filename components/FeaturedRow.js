@@ -8,7 +8,7 @@ import sanityClient from "../sanity";
 const FeaturedRow = ({ id, title, description }) => {
   const [restaurants, setRestaurants] = React.useState([]);
 
-  //when fn component renders
+  //load on  component when it renders
   useEffect(() => {
     sanityClient
       .fetch(`*[_type == "featured" && _id == $id
@@ -20,9 +20,9 @@ const FeaturedRow = ({ id, title, description }) => {
      }[0]`, { id })
       .then((data) => {
         setRestaurants(data?.restaurants);
-        console.log(data);
+     
       });
-  }, []);
+  }, [id]);
 
   return (
     <View>

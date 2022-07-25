@@ -34,7 +34,7 @@ const HomeScreen = () => {
     });
   }, []);
 
-  //when fn component renders
+ //load on  component when it renders
   useEffect(() => {
     sanityClient.fetch(`*[_type == "featured"]`).then((data) => {
       setFeaturedCategories(data);
